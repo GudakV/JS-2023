@@ -26,9 +26,9 @@ let b = '"100"';
 let c = true;
 console.log(typeof a, b, c)
 
-var name = prompt('Шо по імені','Віталій');
+let name = prompt('Шо по імені','Віталій');
 console.log(name);
-var name2 = prompt('По батькові','Сергійович');
+let name2 = prompt('По батькові','Сергійович');
 console.log(name2);
-var name3 = prompt('Роки','19');
+let name3 = prompt('Роки','19');
 console.log(name3);
