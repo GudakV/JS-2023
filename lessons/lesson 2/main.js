@@ -22,11 +22,32 @@ let obj1 = {
 };
 console.log(obj1);
 // - Створити масив з 10 об'єктами які описують сутніть "користувач". Поля: name, username,password. Вивести в консоль пароль кожного користувача
-let obj2 = ['vasya', 'oleh', 'ivan', 'andrii', 'olya', 'yana', 'ostap', 'anton', 'vitalik', 'tanya']
-    ['andrienko', 'andrienko', 'andrienko', 'andrienko', 'andrienko', 'andrienko', 'andrienko', 'andrienko', 'andrienko', 'andrienko']
-    ['523451', '63456', '45', '12345', '4135', '335', '4135', '135', '34135', '244']];
+let users = [
+    {name: 'aaa',username:'qqq',password:'111'},
+    {name: 'ccc',username:'www',password:'222'},
+    {name: 'xxx',username:'eee',password:'333'},
+    {name: 'bbb',username:'wwe',password:'444'},
+    {name: 'nnn',username:'yyy',password:'555'},
+    {name: 'mmm',username:'uuu',password:'666'},
+    {name: ',,,',username:'iii',password:'777'},
+    {name: 'hhh',username:'ooo',password:'888'},
+    {name: 'ggg',username:'ppp',password:'999'},
+    {name: 'fff',username:'nnn',password:'000'},
+]
+console.log(users[0].password);
+console.log(users[1].password);
+console.log(users[2].password);
+console.log(users[3].password);
+console.log(users[4].password);
+console.log(users[5].password);
+console.log(users[6].password);
+console.log(users[7].password);
+console.log(users[8].password);
+console.log(users[9].password);
 
-console.log(obj2)
+
+
+
 //
 // Логічні розгалуження:
 //     - Є змінна х, якій ви надаєте довільне числове значення.
