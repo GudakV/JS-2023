@@ -1,7 +1,16 @@
 // Масиви та об'єкти:
 // - Створити масив, наповнити його 10 елементами будь-якого типу, вивести кожен елемент в консоль
 let names = ['vasya', 'oleh', 'ivan', 'andrii', 'olya', 'ostap', 'anton', 'vitalik', 'yana', 'tania'];
-console.log(names)
+console.log(names[0]);
+console.log(names[1]);
+console.log(names[2]);
+console.log(names[3]);
+console.log(names[4]);
+console.log(names[5]);
+console.log(names[6]);
+console.log(names[7]);
+console.log(names[8]);
+console.log(names[9]);
 // - Створити 3 об'єкти які описують книги. Поля об'єкту : title ,pageCount, genre.
 let obj = {
     title: 10,
@@ -100,25 +109,26 @@ switch (days) {
     case 'sunday':
         console.log('vodka');
         break;
-}
+    }
 
 
 //     - Користувач вводить або має два числа.
 //         Потрібно знайти та вивести максимальне число з тих двох .
 //         Також потрібно врахувати коли введені рівні числа.
-var a,b
-a = prompt('Перше число');
-b = parseInt(prompt('Друге число'));
-if (a>b) {
+let a = prompt('Перше число');
+let b = parseInt(prompt('Друге число'));
+if (a > b) {
     console.log(a);
-} else if (a<b) {
+} else if (a < b) {
     console.log(b);
-} else if (a=b) {
+} else if (a = b) {
     console.log('funny,but no');
 }
 //     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
 //         за допомоги  оператора || буде присвоювати змінній х значення "default"  якщо значення змінної х являється falsy (хибноподібні, тобто приводиться до false)
-// -------------------------------------------------------------------------
+
+
+
 //     - з файлу arrays.js (лежить в папці 2023 plan ) взяти масив coursesAndDurationArray. За допомоги іф перевірити кожен його елемент на тривалість навчання. У випадку якщо тривалість довша за 5 місяців вивести в консоль "Супер".
 // let coursesAndDurationArray = prompt('Тривалість навчання')[
 //     {title: 'JavaScript Complex', monthDuration: 5},
