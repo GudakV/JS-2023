@@ -109,6 +109,7 @@ switch (days) {
     case 'sunday':
         console.log('vodka');
         break;
+        default ('its ok')
     }
 
 
@@ -121,7 +122,7 @@ if (a > b) {
     console.log(a);
 } else if (a < b) {
     console.log(b);
-} else if (a = b) {
+} else if (a === b) {
     console.log('funny,but no');
 }
 //     - є змінна х, яка може прийняти будь-яке значення (стрінг, число, undefined, null  і тд включно). Напишіть код який,
