@@ -9,10 +9,8 @@ console.log(r1);
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
 function R(pi, r) {
-    let result = pi * r * r;
-    return result;
+    return  pi * r * r;
 }
-
 let r2 = R(3.14, 3);
 console.log(r2);
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
@@ -47,18 +45,12 @@ let users = [
     {name: 'max', age: 31, status: true}];
 userArray(users);
 
-// - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-function page() {
-    let par = `<div> 
-<h2>параграф
-<p>текст через аргумент</p>
-</h2>
-</div>`
-    document.write(par);
+// - створити функцію яка створює параграф з текстом. Текст задати через аргументаг
+function paragraph(text){
+    document.write(`<p>${text}</p>`);
 }
-
-page();
-
+paragraph(`hello`);
+paragraph(`cool`);
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
 function foo1(ul, li) {
     let text = `
@@ -75,7 +67,7 @@ foo1(`wazauap`, `I am`);
 // - створити функцію яка створює ul з елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
 function foo(text, column){
     document.write(`<ul>`)
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < column; i++) {
         const textElement = text[i];
         document.write(`<li>${text}</li>`)
     }
@@ -90,28 +82,64 @@ function prum(element){
         const listElement = element[i];
         document.write(`<li>${element}</li>`);
     }
+    document.write(`</ul>`);
 }
 prum(arr);
 // - створити функцію яка приймає масив об'єктів з наступними полями id,name,age , та виводить їх в документ. Для кожного об'єкту окремий блок.
-// const peaples =[
-//     {name: 'vasya', age: 31, status: false},
-//     {name: 'petya', age: 30, status: true},
-//     {name: 'olya', age: 31, status: false},
-//     {name: 'max', age: 31, status: true}];
-
+function fooBlockCreator (objects){
+    for (const item of objects){
+        document.write(`<div>${item.id}${item.name}${item.age}</div>`);
+    }
+}
 // - створити функцію яка повертає найменьше число з масиву
-
+function min(numbers){
+    let minimum = numbers[0];
+    for (const number of numbers){
+        if(minimum > number){
+            minimum = number
+        }
+    }
+    return  minimum
+}
+min([11],[22],[33]);
 
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->13
-function calculator(num1, num2, num3) {
-    return num1 + num2 + num3;
+function sum(numbers) {
+    let basket =0;
+    for (const number of numbers){
+        basket += number;
+    }
+    return basket;
 }
-let newVar = [calculator(1,2,10)];
-console.log(newVar);
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
-function swap()
-
+function swap (arr,index1,index2){
+    let v1 = arr[index1];
+    let v2 = arr[index2];
+    arr[index1] = v2;
+    arr[index2] = v1;
+}
+swap([11,22,33,44,55]0,3)
 // - Написати функцію обміну валюти exchange(sumUAH,currencyValues,exchangeCurrency)
 // Приклад exchange(10000,[{currency:'USD',value:40},{currency:'EUR',value:42}],'USD') // => 250  (((IF)))
+function exchange(uah,currencies,exitCurrency){
+    for (const item in currencies) {
+        if (item.currency === exitCurrency){
+            return uah/item.value;
+        }
+
+    }
+}
+exchange(10000,
+    [
+        {currency:'USD',value:40},
+        {currency:'EUR',value:42}
+    ],
+    'USD'
+)
+
+
+
+
+
