@@ -158,12 +158,14 @@ for (let user of users) {
     }
     `</ul>`
 }
+
 {
     `<ul>`
     for (let user of users) {
         if (user.age >30)
-            document.write(`<li>${user.name} ${user.age}</li>`)
+            document.write(`<li>'${user.name} ${user.age'</li>`)
     }
-    `</ul>`
+`</ul>`
 }
+
 
