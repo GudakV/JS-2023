@@ -73,10 +73,7 @@ let sort2 = coursesAndDurationArray.sort((a, b,) => {
 });
 console.log(sort2);
 // -- відфільтрувати , залишивши тільки курси з тривалістю більше 5 місяців
-// let sort3 = coursesAndDurationArray.sort((a,b) =>{
-//     return a > 5
-// })
-// console.log(sort3);
+console.log(coursesAndDurationArray.filter((item) => item.monthDuration >5));
 // -- за допомоги map перетворити кожен елемент на наступний тип {id,title,monthDuration}
 let users = [
     {title: 'JavaScript Complex', monthDuration: 5},
@@ -139,7 +136,7 @@ let kard =
 
     ];
 // - знайти піковий туз
-console.log(kard.at(8));
+console.log(kard.find((card) => card.cardSuit === `spade` && card.value === `ace`));
 // - всі шістки
 let find = kard.filter(value => value.value === `6`);
 console.log(find);
@@ -150,7 +147,7 @@ console.log(find1);
 let find2 = kard.filter(value => value.cardSuit === 'diamonds');
 console.log(find2);
 // - всі трефи від 9 та більше
-
+console.log(kard.filter((card) => card.cardSuit === `clubs` && [`9`, `10`, `ace`, `jack`, `queen`,`king`].includes(card.value)));
 
 // =========================
 //
