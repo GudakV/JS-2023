@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let url1 = new URL(location.href);
+    let json = url1.searchParams.get(`id`);
+    let user = (json);
+    console.log(user);
+    let arr = [user];
+
+    for (const arrElement of arr) {
+        let userBlocks = document.createElement('div');
+        // let head = document.createElement('h2');
+        // head.innerText = user.id;
+        let p = document.createElement('p');
+        p.innerText = `${arrElement.title}`;
+        p.classList.add('xxx');
+        userBlocks.append( p);
+        document.body.appendChild(userBlocks);
+    }
+    // console.log(user);
+    // let arr = [posts];
+    //
+    // for (const arrElement of arr) {
+    //     let userBlocks = document.createElement('div');
+    //     let head = document.createElement('h2');
+    //     head.innerText = posts.name;
+    //     let p = document.createElement('p');
+    //     p.innerText = posts.title;
+    //     // p.classList.add('xxx');
+    //     userBlocks.append(head ,p);
+    //     document.body.appendChild(userBlocks);
+    // }
+    // https://jsonplaceholder.typicode.com/posts/POST_ID/comments
+
+</script>
+</body>
+</html>
