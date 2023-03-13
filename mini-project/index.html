@@ -30,8 +30,6 @@
               // div.classList.add(`user-item`)
               let a = document.createElement(`a`);
               a.innerText = `${user.id} ${user.name}`;
-              // let button = document.createElement(`button`);
-              //   <button onClick="window.location.href = 'https://jsonplaceholder.typicode.com/users';">Click Here</button>
               a.href = `user-details.html?data=` + JSON.stringify(user);
               div.appendChild(a,);
               document.body.appendChild(div);
