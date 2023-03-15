@@ -5,11 +5,31 @@
     <title>Title</title>
 </head>
 <body>
-
+<!--user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє,
+ на 90% ширини сторінки, по центру.-->
+<!--блоки з короткою іфною про post - в ряд по 5 .-->
 <style>
+    body{
+        background-color: lightslategrey;
+    }
     .xxx{
         color: blue;
         font-family: Cambria;
+    }
+    .div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+    .button{
+        width: 90%;
+        margin-left: 5%;
+        color: orange;
+        background-color: orangered;
+    }
+    .a{
+        display: flex;
     }
 </style>
 
@@ -18,57 +38,48 @@
     let url = new URL(location.href);
     let json = url.searchParams.get(`data`);
     let user = JSON.parse(json);
-    let arr = [user];
-console.log(user);
-    for (const arrElement of arr) {
-        let userBlocks = document.createElement('div');
-        let head = document.createElement('h2');
-        head.innerText = user.name;
-        let p = document.createElement('p');
-        p.innerText = `Username: ${user.username}
-        Email: ${user.email},
-        street: ${user.address.street},
-        suite: ${user.address.suite},
-        city: ${user.address.city},
-        zipcode: ${user.address.zipcode},
-        geo lat: ${user.address.geo.lat},
-        geo lng: ${user.address.geo.lng},
-        phone: ${user.phone},
-        website: ${user.website},
-        company name: ${user.company.name},
-        company catchPhrase: ${user.company.catchPhrase},
-        company bs: ${user.company.bs}`;
-        p.classList.add('xxx');
-        userBlocks.append(head ,p);
-        document.body.appendChild(userBlocks);
-    }
+    console.log(user);
 
+    let userBlocks = document.createElement('div');
+    userBlocks.classList.add('div');
+    let head = document.createElement('h2');
+    head.innerText = user.name;
+    let p = document.createElement('p');
+    p.innerText = `Username: ${user.username}
+    Email: ${user.email},
+    street: ${user.address.street},
+    suite: ${user.address.suite},
+    city: ${user.address.city},
+    zipcode: ${user.address.zipcode},
+    geo lat: ${user.address.geo.lat},
+    geo lng: ${user.address.geo.lng},
+    phone: ${user.phone},
+    website: ${user.website},
+    company name: ${user.company.name},
+    company catchPhrase: ${user.company.catchPhrase},
+    company bs: ${user.company.bs}`;
+    p.classList.add('xxx');
+    userBlocks.append(head ,p);
+    document.body.appendChild(userBlocks);
 
-
-    // 5 Додати кнопку "post of current user", при кліку на яку, з'являються
-    // title всіх постів поточного юзера
-    // (для получения постов используйте эндпоинт
-    // https://jsonplaceholder.typicode.com/users/USER_ID/posts)
-    //
-    //     6 Каждому посту додати кнопку/посилання, при кліку на яку
-    //     відбувається перехід на сторінку post-details.html, котра має детальну інфу про поточний пост.
     function displayPosts(){
         let url1 = new URL(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`);
         fetch(url1)
             .then(value => value.json())
-            .then(users => {
-                for (const user of users) {
+            .then(posts => {
+                for (const post of posts) {
                     let block = document.createElement(`div`);
                     let a = document.createElement(`a`);
-                    a.innerText =` ${user.id},${user.title}`;
-                    a.href = `post-details.html?data=${user[`data`]}` + JSON.stringify(user);
-                        block.appendChild(a);
-                        document.body.appendChild(block);
-                    }
+                    a.classList.add('a');
+                    a.innerText =` ${post.id},${post.title}`;
+                    a.href = `post-details.html?data=` + JSON.stringify(post);
+                    block.appendChild(a);
+                    document.body.appendChild(block);
+                }
             });
     }
 </script>
-<button onClick="displayPosts()">Post of current user</button>
+<button onClick="displayPosts()" class="button">Post of current user</button>
 </body>
 </html>
 
